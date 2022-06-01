@@ -40,3 +40,16 @@ foreach (var el in firstArr)
 Console.WriteLine("------------ List ------------");
 
 List<int> list = new List<int>();
+
+list.AddRange(firstArr);
+list.Add(1000);
+list.Add(10001);
+list.Add(10002);
+
+foreach (var el in list)
+{
+    Console.WriteLine($"The value is {el}");
+    
+}
+
+Console.WriteLine($"The first element is {list[0]}");
