@@ -1,55 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
-string stranger = "Another";
-int one = 1;
 
-Console.WriteLine($"Hello, {stranger} {one}");
+using Accounts;
 
-Console.WriteLine(stranger.IndexOf("A"));
+BankAccount account = new BankAccount();
 
-int a = 10, b = 20, c = 40;
+Console.WriteLine($"This is my account number {account.AccountNumber} and my balance is {account.Balance}. Plus my name is {account.Owner} ");
 
-int sum = a + b + c;
+BankAccount account2 = new BankAccount("Nerissa", decimal.MinValue);
 
-double d = 5.0, e = 2.0;
+Console.WriteLine($"This is my account number 2 {account2.AccountNumber} and my balance is {account2.Balance}. Plus my name is {account2.Owner} ");
 
-double div = d / e;
-int max = int.MaxValue;
-int maxIsh = max + 3;
+SavingsAccount savings = new SavingsAccount();
+savings.InterestRate = 0.05m;
+savings.Balance = 2000.0m;
 
-Console.WriteLine($"The sum is {sum}");
-Console.WriteLine($"What is 5/2?: {div}");
-Console.WriteLine($"What is the maxish {maxIsh}");
+savings.AddMonthlyInterest();
 
-Console.WriteLine("----------- Array -----------");
-
-var firstArr = new int[5] {-69, 46, 10, 1, 100} ;
-// int[] arr2 = new int[4]
-// int[] arr2 = new int[] {1,2,3,4} -- This line and one above are the same.
-firstArr[1] = 20;
-
-for (var i = 0; i < firstArr.Length; i++)
-{
-    Console.WriteLine($"The value at {i} is {firstArr[i]}");
-}
-
-foreach (var el in firstArr)
-{
-    Console.WriteLine($"The value is {el}");
-}
-
-Console.WriteLine("------------ List ------------");
-
-List<int> list = new List<int>();
-
-list.AddRange(firstArr);
-list.Add(1000);
-list.Add(10001);
-list.Add(10002);
-
-foreach (var el in list)
-{
-    Console.WriteLine($"The value is {el}");
-    
-}
-
-Console.WriteLine($"The first element is {list[0]}");
+Console.WriteLine($"What is the balance of {savings.Balance} ");
